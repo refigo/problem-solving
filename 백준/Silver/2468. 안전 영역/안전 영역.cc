@@ -49,8 +49,7 @@ int main() {
 		}
 		if (cur_area == 0)
 			break;
-		if (cur_area > ans_area)
-			ans_area = cur_area;
+		ans_area = max(ans_area, cur_area);
 		fill(&visited[0][0], &visited[0][0] + n_max * n_max, 0);
 	}
 	cout << ans_area << '\n';
