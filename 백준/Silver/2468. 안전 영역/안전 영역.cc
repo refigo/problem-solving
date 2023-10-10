@@ -12,15 +12,6 @@ const int dx[4] = {0, 1, 0, -1};
 
 int ans_area;
 
-void init_visited() {
-	// fill(visited, visited + n_max * n_max, 0);
-	for (int i = 0; i < n; i++){
-		for (int j = 0; j < n; j++){
-			visited[i][j] = 0;
-		}
-	}
-}
-
 void dfs(int y, int x, int h) {
 	visited[y][x] = 1;
 	for (int i = 0; i < 4; i++){
@@ -60,7 +51,7 @@ int main() {
 			break;
 		if (cur_area > ans_area)
 			ans_area = cur_area;
-		init_visited();
+		fill(&visited[0][0], &visited[0][0] + n_max * n_max, 0);
 	}
 	cout << ans_area << '\n';
 	return 0;
