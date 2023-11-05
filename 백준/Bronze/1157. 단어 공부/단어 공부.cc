@@ -6,6 +6,8 @@ int max_cnt = -1;
 int max_idx = -1;
 int cnt_alp_max = 0;
 int main() {
+	cin.tie(0); cout.tie(0);
+	ios::sync_with_stdio(false);
 	cin >> s;
 	for (int i = 0; i < s.length(); i++) {
 		a[tolower(s[i]) - 'a'] += 1;
