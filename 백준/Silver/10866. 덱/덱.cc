@@ -27,6 +27,7 @@ int main() {
 				dq.pop_front();
 			}
 			cout << '\n';
+			continue;
 		}
 		if (cmd == "pop_back") {
 			if (dq.size() == 0) {
@@ -36,12 +37,15 @@ int main() {
 				dq.pop_back();
 			}
 			cout << '\n';
+			continue;
 		}
 		if (cmd == "size") {
 			cout << dq.size() << '\n';
+			continue;
 		}
 		if (cmd == "empty") {
 			cout << int(dq.empty()) << '\n';
+			continue;
 		}
 		if (cmd == "front") {
 			if (dq.size() == 0) {
@@ -50,6 +54,7 @@ int main() {
 				cout << dq.front();
 			}
 			cout << '\n';
+			continue;
 		}
 		if (cmd == "back") {
 			if (dq.size() == 0) {
@@ -58,6 +63,7 @@ int main() {
 				cout << dq.back();
 			}
 			cout << '\n';
+			continue;
 		}
 	}
 	return 0;
