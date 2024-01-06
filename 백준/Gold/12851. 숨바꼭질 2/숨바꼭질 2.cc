@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 int n, k, cur;
-int level[200004];
-int cnt[200004];
+int level[100004];
+int cnt[100004];
 int main() {
 	cin.tie(0); cout.tie(0);
 	ios::sync_with_stdio(false);
