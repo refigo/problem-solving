@@ -38,7 +38,6 @@ int main() {
 		cin >> opers[i];
 	}
 	go(0, "");
-	// sort(ret.begin(), ret.end());
 	cout << ret.back() << '\n';
 	cout << ret.front() << '\n';
 	return 0;
