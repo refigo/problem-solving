@@ -47,12 +47,12 @@ int main() {
 				cnt--;
 			}
 		}
-		v = tmp;
-		turn++;
 		if (prev_cnt == cnt) {
 			turn = -1;
 			break ;
 		}
+		v = tmp;
+		turn++;
 	}
 	cout << turn << '\n';
 	return 0;
