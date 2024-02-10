@@ -2,12 +2,11 @@
 using namespace std;
 int n;
 char a[104][104];
-int visited[104][104];
+bool visited[104][104];
 string s;
 const int dy[4] = {-1, 0, 1, 0};
 const int dx[4] = {0, 1, 0, -1};
 int ny, nx, cnt_nm, cnt_rg;
-// vector<int> ret;
 void dfs_rg(int y, int x, char clr) {
 	visited[y][x] = 1;
 	for (int i = 0; i < 4; i++) {
@@ -43,17 +42,13 @@ int main() {
 			a[i][j] = s[j];
 		}
 	}
-	// fill(&visited[0][0], &visited[104][104], 0);
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
 			if (visited[i][j]) continue;
 			dfs(i, j, a[i][j]);
 			cnt_nm++;
-			// cout << "뭐여";
 		}
 	}
-	cout << cnt_nm << ' ';
-	// ret.push_back(cnt_nm);
 	fill(&visited[0][0], &visited[n][n], 0);
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
@@ -62,10 +57,7 @@ int main() {
 			cnt_rg++;
 		}
 	}
-	// ret.push_back(cnt_rg);
-	// cout << ret.size() << '\n';
-	// for (int ans : ret) cout << ans << ' ';
-	// cout << cnt_nm << ' ';
+	cout << cnt_nm << ' ';
 	cout << cnt_rg << '\n';
 	return 0;
 }
