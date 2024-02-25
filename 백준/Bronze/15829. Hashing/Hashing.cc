@@ -9,7 +9,12 @@ int main() {
 	cin >> n;
 	cin >> s;
 	for (int i = 0; i < n; i++) {
-		ret += (s[i] - 'a' + 1) * pow(31, i);
+		long long tmp = 1;
+		for (int j = 0; j < i; j++) {
+			tmp *= 31;
+			tmp %= 1234567891;
+		}
+		ret += (s[i] - 'a' + 1) * tmp;
 		ret %= 1234567891;
 	}
 	cout << ret << '\n';
