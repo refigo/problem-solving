@@ -12,40 +12,33 @@ int main() {
         int n, m;
         cin >> n >> m;
         
-        queue<pair<int, int>> q;  // {index, priority}
-        vector<int> importance(n);
+        queue<pair<int, int>> docs;  // {index, priority}
+        priority_queue<int> pq;  // max heap for priorities
         
         for (int i = 0; i < n; i++) {
-            cin >> importance[i];
-            q.push({i, importance[i]});
+            int priority;
+            cin >> priority;
+            docs.push({i, priority});
+            pq.push(priority);
         }
         
         int count = 0;
         
-        while (!q.empty()) {
-            int curr_idx = q.front().first;
-            int curr_priority = q.front().second;
-            q.pop();
+        while (!docs.empty()) {
+            int curr_idx = docs.front().first;
+            int curr_priority = docs.front().second;
+            docs.pop();
             
-            bool is_highest = true;
-            for (int i = 0; i < q.size(); i++) {
-                pair<int, int> next = q.front();
-                q.pop();
-                
-                if (next.second > curr_priority) {
-                    is_highest = false;
-                }
-                q.push(next);
-            }
-            
-            if (is_highest) {
+            if (curr_priority == pq.top()) {
                 count++;
+                pq.pop();
+                
                 if (curr_idx == m) {
                     cout << count << '\n';
                     break;
                 }
             } else {
-                q.push({curr_idx, curr_priority});
+                docs.push({curr_idx, curr_priority});
             }
         }
     }
