@@ -14,8 +14,6 @@ int main() {
         cin >> solutions[i];
     }
     
-    sort(solutions.begin(), solutions.end());
-    
     int left = 0;
     int right = n - 1;
     
