@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int N; 
+    if(!(cin >> N)) return 0;
+    if (N == 2) cout << 3 << '\n';
+    else cout << N << '\n';
+    return 0;
+}
